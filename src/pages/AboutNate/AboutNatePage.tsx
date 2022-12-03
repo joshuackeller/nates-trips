@@ -5,7 +5,7 @@ const AboutNatePage = () => {
     <div className="grid grid-cols-2 justify-items-center place-items-center p-12">
       <div>
         <Image
-          src="https://project3-531-dev.s3.amazonaws.com/ashton.jpeg"
+          src="https://d1aoqvjojhh952.cloudfront.net/ashton.jpeg"
           height={300}
           width={400}
           alt="Nate Chandler"
