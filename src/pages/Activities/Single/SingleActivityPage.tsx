@@ -4,7 +4,7 @@ import Image from "next/image";
 import GoogleMapReact from "google-map-react";
 import { MapPinIcon } from "@heroicons/react/20/solid";
 
-const API_KEY = process.env.GOOGLE_API_KEY;
+const API_KEY = process.env.GOOGLE_API_KEY || "";
 
 interface SingleActivityProps {
   activityId: string;
@@ -66,8 +66,7 @@ const GoogleMap = ({ longitutde, latitude }: GoogleMapProps) => {
     <div style={{ height: "400px", width: "400px" }}>
       <GoogleMapReact
         bootstrapURLKeys={{
-          key:
-            API_KEY || "AIzaSyDNK" + "74daOgP4OxQ" + "qojaqUcA4X" + "Vf7FVoM94",
+          key: API_KEY,
         }}
         defaultCenter={mapProps.center}
         defaultZoom={mapProps.zoom}
