@@ -52,8 +52,6 @@ interface GoogleMapProps {
   latitude: string;
 }
 
-const AnyReactComponent = ({ lat, lng, text }: any) => <div>location</div>;
-
 const GoogleMap = ({ longitutde, latitude }: GoogleMapProps) => {
   const mapProps = {
     center: {
@@ -71,14 +69,22 @@ const GoogleMap = ({ longitutde, latitude }: GoogleMapProps) => {
         defaultCenter={mapProps.center}
         defaultZoom={mapProps.zoom}
       >
-        <MapPinIcon
-          className="h-8 text-red-500"
-          lat={latitude}
-          lng={longitutde}
+        <MapPinComponent
+          lat={parseFloat(latitude)}
+          lng={parseFloat(longitutde)}
         />
       </GoogleMapReact>
     </div>
   );
+};
+
+interface MapPinComponentProps {
+  lat: number;
+  lng: number;
+}
+
+const MapPinComponent = ({ lat, lng }: MapPinComponentProps) => {
+  return <MapPinIcon className="h-8 text-red-500" />;
 };
 
 export default SingleActivityPage;
